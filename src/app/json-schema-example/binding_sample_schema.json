@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "title": "Example with custom bindings.",
+  "description": "Type a family name to see how the name gets synchronized with the children.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Surname",
+      "description": " (Has a click event binding - see console)"
+    },
+    "forename": {
+      "type": "string",
+      "title": "Forename",
+      "description": " (Has a mouse over event binding - see console)"
+    },
+    "children": {
+      "type": "array",
+      "title": "Family",
+      "items": {
+        "type": "object",
+        "title": "Children",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Surname"
+          },
+          "forename": {
+            "type": "string",
+            "title": "forename"
+          },
+          "age": {
+            "type": "number",
+            "title": "age"
+          }
+        }
+      }
+    },
+    "test": {
+      "type": "string",
+      "title": "Testparam",
+      "visibleIf": {
+        "allOf": [
+          {
+            "forename": [
+              "$ANY$"
+            ]
+          },
+          {
+            "name": [
+              "$ANY$"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
